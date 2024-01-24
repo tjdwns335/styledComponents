@@ -1,6 +1,7 @@
 import './App.css';
 import styled from 'styled-components';
 import TestPage from './components/TestPage';
+import GlobalStyle from './GlobalStyle2';
 
 const StContainer = styled.div`
   display: flex;
@@ -43,10 +44,13 @@ function App() {
     //     })
     //   }
     // </StContainer >
-    <TestPage
-      title="제목입니다"
-      contents="내용입니다"
-    ></TestPage>
+    <>
+      <GlobalStyle />
+      <TestPage
+        title="제목입니다"
+        contents="내용입니다"
+      ></TestPage>
+    </>
   );
 }
 
