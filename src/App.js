@@ -1,21 +1,47 @@
 import './App.css';
 import styled from 'styled-components';
 
+const StContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`
+
 const StBox = styled.div`
   width: 100px;
   height: 100px;
   border: 1px solid ${(props) => props.borderColor};
   margin: 20px;
-  background-color: ${(props) => props.backgroundColor};
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
+// 박스의 색
+const boxList = ['red', 'blue', 'green', 'black'];
+
+// 색을 넣으면, 이름을 반환
+const getBoxName = (color) => {
+  switch (color) {
+    case 'red':
+      return "빨간 박스";
+    case 'green':
+      return '초록 박스';
+    case 'blue':
+      return '파란박스';
+    default:
+      return '검정 박스';
+  }
+}
 
 function App() {
   return (
-    <>
-      <StBox borderColor="red" backgroundColor="yellow">빨간박스</StBox>
-      <StBox borderColor="blue">파란박스</StBox>
-      <StBox borderColor="green">초록박스</StBox>
-    </>
+    <StContainer>
+      {/* <StBox borderColor="red">빨간박스</StBox> */}
+      {
+        boxList.map((box) => {
+          return <StBox borderColor={box}> {getBoxName(box)}</StBox>
+        })
+      }
+    </StContainer >
   );
 }
 
