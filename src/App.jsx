@@ -1,5 +1,6 @@
 import './App.css';
 import styled from 'styled-components';
+import TestPage from './components/TestPage';
 
 const StContainer = styled.div`
   display: flex;
@@ -34,14 +35,18 @@ const getBoxName = (color) => {
 
 function App() {
   return (
-    <StContainer>
-      {/* <StBox borderColor="red">빨간박스</StBox> */}
-      {
-        boxList.map((box) => {
-          return <StBox borderColor={box}> {getBoxName(box)}</StBox>
-        })
-      }
-    </StContainer >
+    // <StContainer>
+    //   {/* <StBox borderColor="red">빨간박스</StBox> */}
+    //   {
+    //     boxList.map((box) => {
+    //       return <StBox borderColor={box}> {getBoxName(box)}</StBox>
+    //     })
+    //   }
+    // </StContainer >
+    <TestPage
+      title="제목입니다"
+      contents="내용입니다"
+    ></TestPage>
   );
 }
 
